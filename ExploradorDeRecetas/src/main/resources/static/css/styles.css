@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+body{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #8000ff;
+}
+
+.btn{
+	border: solid 1px #9e6ff7;
+	background-color: #9e6ff7;
+	color: #000000;
+	border-radius: 5px;
+	padding: 5px;
+}
