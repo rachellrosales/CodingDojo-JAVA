@@ -23,12 +23,15 @@ public class ServicioCanciones {
 		return this.repositorioCanciones.findAll();
 	}
 	
-	public Cancion obtenerCancionPorId(Long id) {
-        Optional<Cancion> cancion = repositorioCanciones.findById(id);
-        return cancion.orElse(null);
+	public Cancion obtenerCancionPorId(Long idCancion) {
+        return this.repositorioCanciones.findById(idCancion).orElse(null);
     }
 	
 	public Cancion agregarCancion(Cancion nuevaCancion) {
 		return this.repositorioCanciones.save(nuevaCancion);
+	}
+	
+	public void eliminaCancion(Long idCancion) {
+		this.repositorioCanciones.deleteById(idCancion);
 	}
 }

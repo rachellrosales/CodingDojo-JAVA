@@ -20,7 +20,6 @@ INDEX VERSION 1.134+C:\Users\rache\Downloads\SPRINGTOOL - CodingDojo\.metadata\.
 3569226224.index
 538571733.index
 3380369531.index
-63741035.index
 1325716438.index
 1239014973.index
 4065567211.index

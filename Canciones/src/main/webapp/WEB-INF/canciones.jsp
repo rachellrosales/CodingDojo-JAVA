@@ -19,7 +19,11 @@
 					<div class="col-3 tarjeta-cancion">
 						<h3>${cancion.titulo}</h3>
 						<p>Autor: ${cancion.artista}</p>
-						<a class= "btn btn-primary" href="/canciones/detalle/${cancion.id}">Detalle</a>
+						<form action="/canciones/detalle/${cancion.id}" method="GET">
+							<button class= "btn btn-success">
+								Detalle
+							</button>
+						</form>
 					</div>
 				</c:forEach>
 			</div>

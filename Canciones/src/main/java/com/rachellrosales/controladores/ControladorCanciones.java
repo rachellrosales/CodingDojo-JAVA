@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,8 +34,8 @@ public class ControladorCanciones {
 	}
 	
 	@GetMapping("/canciones/detalle/{idCancion}")
-    public String desplegarDetalleCancion(@PathVariable("idCancion") Long id, Model model) {
-        Cancion cancion = this.servicioCanciones.obtenerCancionPorId(id);
+    public String desplegarDetalleCancion(@PathVariable("idCancion") Long idCancion, Model model) {
+        Cancion cancion = this.servicioCanciones.obtenerCancionPorId(idCancion);
         model.addAttribute("cancion", cancion);
         return "detalleCancion.jsp";
     }
@@ -50,6 +51,12 @@ public class ControladorCanciones {
 			return "agregarCancion.jsp";
 		}
 		this.servicioCanciones.agregarCancion(cancion);
+		return "redirect:/canciones";
+	}
+	
+	@DeleteMapping("/canciones/eliminar/{idCancion}")
+	public String procesarEliminarCancion(@PathVariable Long idCancion) {
+		this.servicioCanciones.eliminaCancion(idCancion);
 		return "redirect:/canciones";
 	}
 	
