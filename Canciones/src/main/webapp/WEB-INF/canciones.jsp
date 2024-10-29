@@ -16,12 +16,15 @@
 			</div>
 			<div class="row">
 				<c:forEach items="${canciones}" var="cancion">
-					<div class="col tarjeta-cancion">
+					<div class="col-3 tarjeta-cancion">
 						<h3>${cancion.titulo}</h3>
 						<p>Autor: ${cancion.artista}</p>
-						<a href="/canciones/detalle/${cancion.id}">Detalle</a>
+						<a class= "btn btn-primary" href="/canciones/detalle/${cancion.id}">Detalle</a>
 					</div>
 				</c:forEach>
+			</div>
+			<div class="row">
+				<a class= "btn btn-primary" href="/canciones/formulario/agregar">Agregar canción</a>
 			</div>
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
