@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.tarjeta-cancion{
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	background-color: #e0e0e0;
+	margin: 15px;
+	border-radius: 5px;
+	text-align:center;
+	justify-content:center;
+}
+
+p{
+	margin: 0;
+}
+
+
