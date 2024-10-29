@@ -26,10 +26,15 @@
 							Volver
 						</button>
 					</form>
-					<form class= "col-2" action="/canciones/eliminar/${cancion.id}" method="POST">
+					<form class= "col-5" action="/canciones/eliminar/${cancion.id}" method="POST">
 						<input type="hidden" name="_method" value="DELETE"/>
 						<button class= "btn btn-danger">
 							Eliminar canción
+						</button>
+					</form>
+					<form class= "col-5" action="/canciones/formulario/editar/${cancion.id}">
+						<button class= "btn btn-info">
+							Editar canción
 						</button>
 					</form>
 				</div>

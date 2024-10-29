@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.rachellrosales.modelos.Cancion;
 import com.rachellrosales.servicios.ServicioCanciones;
@@ -57,6 +58,23 @@ public class ControladorCanciones {
 	@DeleteMapping("/canciones/eliminar/{idCancion}")
 	public String procesarEliminarCancion(@PathVariable Long idCancion) {
 		this.servicioCanciones.eliminaCancion(idCancion);
+		return "redirect:/canciones";
+	}
+	
+	@GetMapping("/canciones/formulario/editar/{idCancion}")
+	public String formularioEditarCancion(@PathVariable Long idCancion, Model model, @ModelAttribute Cancion cancion) {
+		cancion = this.servicioCanciones.obtenerCancionPorId(idCancion);
+		model.addAttribute("cancion", cancion);
+		return "editarCancion.jsp";
+	}
+	
+	@PutMapping("/canciones/procesa/editar/{idCancion}")
+	public String procesarEditarCancion(@Valid @ModelAttribute Cancion cancion, BindingResult validaciones, @PathVariable Long idCancion) {
+		if(validaciones.hasErrors()) {
+			return "editarCancion.jsp";
+		}
+		cancion.setId(idCancion);
+		this.servicioCanciones.actualizaCancion(cancion);
 		return "redirect:/canciones";
 	}
 	
