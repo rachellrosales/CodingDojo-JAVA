@@ -15,7 +15,7 @@
 					<h1>Detalle de la cancion: ${cancion.titulo}</h1>
 				</div>
 				<div class="row tarjeta-cancion">
-				    <p>Artista: ${cancion.artista}</p>
+				    <p>Artista: ${cancion.artista.nombre} ${cancion.artista.apellido}</p>
 				    <p>Álbum: ${cancion.album}</p>
 				    <p>Género: ${cancion.genero}</p>
 				    <p>Idioma: ${cancion.idioma}</p>
